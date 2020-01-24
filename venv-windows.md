@@ -3,6 +3,7 @@ Holly Zhang
 January 23, 2020
 
 
+
 By default, Command Prompt starts out in the home directory. However if the 
 
 current directory is not the home directory, then the following command can be 
