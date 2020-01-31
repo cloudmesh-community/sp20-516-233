@@ -29,5 +29,16 @@ American College Testing data center and Prairie Bunkers Data Center Park.
 
 ## E.DataCenter.5
 
+Google is currently the largest corporate purchaser of renerwable energy as of 
+today. The majority of their renewable energy comes from wind and the rest is 
+solar power. When creating contracts with renewable energies, Google has helped 
+create wind and solar farms in areas near their data centers. In areas where 
+access to renewables are prohibited for Google, Google works with organizations 
+such as the Re-Source Platform and the Renewable Energy Buyers Alliance to open 
+up that market.
+
+[Google Energy] (https://www.blog.google/outreach-initiatives/environment/meeting-our-match-buying-100-percent-renewable-energy/)
+
 ## E.DataCenter.8
+
 
