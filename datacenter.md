@@ -41,4 +41,12 @@ up that market.
 
 ## E.DataCenter.8
 
+CenturyLink, a cloud communications network, had an outage in December 2019 that was
+caused by a faulty data center card. This took down multiple services such as 
+broadband, television, and phone throughout the United States, Unighted Kingdom, 
+and Singapore. The most notable service lost was 911 emergency services. This 
+simailarly happened in 2015, which resulted in CenturyLink being fined $16 
+million. The company is currently under investigation    
+
+<https://data-economy.com/us-wide-911-centurylink-outage-caused-by-failty-data-centre-network-card/>
 
