@@ -1,5 +1,5 @@
 # Data Center Holly Zhang sp20-516-233
-12345678901234567890123456789012345678901234567890123456789012345678901234567890
+
 ## E.DataCenter.2.b
 
 Apple's data center in Maiden, North Carolina 
