@@ -1,4 +1,6 @@
-### Week 1
+# Notebook Holly Zhang sp20-516-233
+
+## Week 1
 
 * [x] Create an account on https:github.com
 * [x] Fill out the Class Survey
@@ -9,7 +11,7 @@
 * [x] an ePub Reader
 * [x] chameleoncloud.org account
 
-### Week 2
+## Week 2
 
 * [x] Receive your HID
 * [x] README.yml correct
@@ -18,3 +20,6 @@
 * [x] Python environment
 * [x] Upgraded to Windows 10 Education
 * [x] Multipass Installed
+
+## Week 3
+
