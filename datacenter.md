@@ -1,5 +1,7 @@
 # Data Center Holly Zhang sp20-516-233
 
+:o2: attending markdown session mandatory
+
 ## E.DataCenter.2.b
 
 Apple's data center in Maiden, North Carolina is currently their largest with a total of 
