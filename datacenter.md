@@ -1,4 +1,4 @@
-# Data Center Holly Zhang sp20-516-233 {#s-data-center-title}
+# Data Center Holly Zhang sp20-516-233 {#sec:data-center-title}
 
 :o2: attending markdown session mandatory
 
@@ -55,4 +55,4 @@ million. The company is currently under investigation
 
 <https://data-economy.com/us-wide-911-centurylink-outage-caused-by-failty-data-centre-network-card/>
 
-{#s-title}
+{#sec:title}
