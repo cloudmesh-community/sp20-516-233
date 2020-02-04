@@ -1,8 +1,8 @@
-# Data Center Holly Zhang sp20-516-233 {#s-data-center-title}
+# Data Center Holly Zhang sp20-516-233
 
 :o2: attending markdown session mandatory
 
-## E.DataCenter.2.b {#s-data-center-2b}
+## E.DataCenter.2.b
 
 Apple's data center in Maiden, North Carolina is currently their largest with a total of 
 500,000 square feet. It currently uses both solar power and biofuels to run. 
@@ -11,7 +11,7 @@ Apple's data center in Maiden, North Carolina is currently their largest with a 
 
 [Apple Maiden Stats] https://www.apple.com/environment/pdf/Apple_Environmental_Responsibility_Report_2018.pdf>
 
-## E.DataCenter.4 Thermal {#s-data-center-thermal}
+## E.DataCenter.4 Thermal
 
 Thermal energy is the energy gained or lost by transfering heat from one place 
 to another. In the case of data centers, thermal energy is often removed so they 
@@ -32,7 +32,7 @@ American College Testing data center and Prairie Bunkers Data Center Park.
 
 <https://www.datacenterknowledge.com/geothermal-data-centers>
 
-## E.DataCenter.5 {#s-data-center-5}
+## E.DataCenter.5
 
 Google is currently the largest corporate purchaser of renerwable energy as of 
 today. The majority of their renewable energy comes from wind and the rest is 
@@ -44,7 +44,7 @@ up that market.
 
 [Google Energy] (https://www.blog.google/outreach-initiatives/environment/meeting-our-match-buying-100-percent-renewable-energy/)
 
-## E.DataCenter.8 {#s-data-center-8}
+## E.DataCenter.8
 
 CenturyLink, a cloud communications network, had an outage in December 2019 that was
 caused by a faulty data center card. This took down multiple services such as 
