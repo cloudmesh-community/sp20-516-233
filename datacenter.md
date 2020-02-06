@@ -4,8 +4,9 @@
 
 ## E.DataCenter.2.b
 
-Apple's data center in Maiden, North Carolina is currently their largest with a total of 
-500,000 square feet. It currently uses both solar power and biofuels to run. 
+Apple's data center in Maiden, North Carolina is currently their largest with a 
+total of 500,000 square feet. It currently uses both solar power and biofuels to 
+run. 
 
 [Apple Maiden] https://www.datacenters.com/apple-inc-maiden>
 
@@ -16,9 +17,9 @@ Apple's data center in Maiden, North Carolina is currently their largest with a 
 Thermal energy is the energy gained or lost by transfering heat from one place 
 to another. In the case of data centers, thermal energy is often removed so they 
 can cool down. Data centers located in cooler regions such as Verne Global's 
-Iceland data center and Facebook's Luleå, use natually chilled air from the outside 
-instead of air conditioning. The air is filtered before entering the data center to 
-ensure particles and moisture do not damage the equipment.  
+Iceland data center and Facebook's Luleå, use natually chilled air from the 
+outside instead of air conditioning. The air is filtered before entering the 
+data center to ensure particles and moisture do not damage the equipment.  
 
 <https://sustainability.fb.com/innovation-for-our-world/sustainable-data-centers/>
 
@@ -46,12 +47,12 @@ up that market.
 
 ## E.DataCenter.8
 
-CenturyLink, a cloud communications network, had an outage in December 2019 that was
-caused by a faulty data center card. This took down multiple services such as 
-broadband, television, and phone throughout the United States, Unighted Kingdom, 
-and Singapore. The most notable service lost was 911 emergency services. This 
-simailarly happened in 2015, which resulted in CenturyLink being fined $16 
-million. The company is currently under investigation    
+CenturyLink, a cloud communications network, had an outage in December 2019 that 
+was caused by a faulty data center card. This took down multiple services such 
+as broadband, television, and phone throughout the United States, Unighted 
+Kingdom, and Singapore. The most notable service lost was 911 emergency 
+services. This simailarly happened in 2015, which resulted in CenturyLink being 
+fined $16 million. The company is currently under investigation.    
 
 <https://data-economy.com/us-wide-911-centurylink-outage-caused-by-failty-data-centre-network-card/>
 
