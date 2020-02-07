@@ -5,7 +5,7 @@
 ## E.DataCenter.2.b
 
 Apple's data center in Maiden, North Carolina is currently their largest with a 
-total of 500,000 square feet. It currently uses both solar power and biofuels to 
+total of 500,000 square feet [@www-datacenters]. It currently uses both solar power and biofuels to 
 run. 
 
 [Apple Maiden] <https://www.datacenters.com/apple-inc-maiden>
