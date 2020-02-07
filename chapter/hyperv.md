@@ -1,4 +1,4 @@
-# Hyper-V on Microsoft Windows 10 (Pro, EDU, Home) sp20-516-233 Holly Zhang
+# Hyper-V on Microsoft Windows 10 (Pro, EDU, Home) :o2: sp20-516-233 Holly Zhang
 
 ## Hyper-V Concepts
 
