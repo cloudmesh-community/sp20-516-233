@@ -47,6 +47,10 @@ Open Command Prompt as Administrator and enter the following command:
 $ DISM /Online /Disable-Feature:Microsoft-Hyper-V
 ```
  
+ When prompted, restart the machine for the command to affect. This is for 
+ disabling Hyper-V services only. All Hyper-V files will still be on the 
+ machine.
+ 
 ## Hyper-V management from Powershell
 
 ### Enable Hyper-V
