@@ -1,8 +1,32 @@
-# Hyper-V on Microsoft Windows 10 (Pro, EDU, Home) :o2: sp20-516-233 Holly Zhang
+# Hyper-V Concepts sp20-516-233 Holly Zhang
 
-## Hyper-V Concepts
-Hyper-V is a [@www-microsoft-overview].
+## Requirements
 
+### Operating System
+
+Either of the following Windows 10 operating systems are needed to run Hyper-V 
+[@hyper-v-requirements].
+
+> * Microsoft Windows 10 Enterprise
+> * Microsoft Windows 10 Pro
+> * Microsoft Windows 10 EDU
+
+### Hardware
+
+Check whether Hyper-V is able to operate on the hardware by entering the 
+following command in either Powershell or Command Prompt:
+
+```bash
+$ systeminfo
+```
+Scroll through the output until the section `Hyper-V Requirements:` is found. If 
+all requirements have `Yes` next to them, then Hyper-V can be used once it is 
+enabled [@hyper-v-requirements]. If the `Data Execution Prevention Available:` 
+requirement says `No`, the system BIOS will need to be adjusted. Make sure that 
+`Hardware Enforced Data Execution Prevention` and `Virtualization Technology` 
+are enabled in the system BIOS. It is possible that `Virtualization Technology` 
+is listed under a different name depending on the manufacturer 
+[@hyper-v-requirements]. 
 
 ## Hyper-V management from CMD.EXE
 
@@ -15,12 +39,15 @@ Administrator. On the command line, enter the following command:
 $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 ```
 
+```bash
+bcdedit /set hypervisorlaunchtype auto
+```
 ### Disable Hyper-V from CMD.EXE
 
 Open Command Prompt as Administrator and enter the following command:
 
 ```bash
-$ 
+$ bcdedit /set hypervisorlaunchtype off
 ```
  
 ## Hyper-V management from Powershell
@@ -51,6 +78,11 @@ following command:
 $ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor 
 ``` 
 
+### More Hyper-V Commands
+
+A more extensive list of Hyper-V commands on Powershell can be be found at: 
+<https://docs.microsoft.com/en-us/powershell/module/hyper-v/?view=win10-ps>.
+
 ## Multipass Benchmark
 
 ### Windows 10 Pro and EDU
@@ -62,12 +94,13 @@ install Multipass.
 
 ### Windows 10 Home
 
-Installation of Multipass on Windows 10 Home requires Virtualbox. Although 
-possible, this way has multiple steps compared to the installation on Windows 10 
-Pro or EDU. The following two subsections show how to prepare the installation 
-for Virtualbox on Windows Home or how to upgrade to Windows 10 Pro or EDU. 
+Hyper-V is not supported for Windows 10 Home. In order to install Multipass, 
+either Virtualbox needs to be installed or the operating system needs to be 
+upgraded to Windows 10 Pro or EDU. The following two subsections show how to 
+prepare the installation for Virtualbox on Windows Home or how to upgrade to 
+Windows 10 Pro or EDU. 
 
-#### Virtualbox Installation
+#### Disable Hyper-V Before Virtualbox Installation
 
 Before installing Virtualbox, make sure that Hyper-V has been disabled. The 
 previous section includes commands to disable Hyper-V. Once Hyper-V is disabled, 
