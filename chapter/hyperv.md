@@ -33,15 +33,19 @@ is listed under a different name depending on the manufacturer
 ### Enable Hyper-V from CMD.EXE
 
 To enable Hyper-V from Command Prompt, first start Command Prompt as 
-Administrator. On the command line, enter the following command:
+Administrator. Remember to save any work as this will require a system reboot. 
+On the command line, enter the following command:
 
 ```bash
 $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 ```
+When prompted, restart the machine. Hyper-V will now be enabled on the machine.
 
 ### Disable Hyper-V from CMD.EXE
 
-Open Command Prompt as Administrator and enter the following command:
+Before disabling Hyper-V, save any work on the machine since a system reboot 
+will be required. Open Command Prompt as Administrator and enter the following 
+command:
 
 ```bash
 $ DISM /Online /Disable-Feature:Microsoft-Hyper-V
