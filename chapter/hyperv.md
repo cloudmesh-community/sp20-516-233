@@ -31,19 +31,21 @@ is listed under a different name depending on the manufacturer
 ## Features
 
 Hyper-V has two main features, `Hyper-V Management Tools` and 
-`Hyper-V Platform`. Withing these two features are two more features. The 
+`Hyper-V Platform`. Within these two features are two more features. The 
 following list shows how the features are structured:
 
 > * Hyper-V Management Tools
->   * Hyper-V Platform
->   * Hyper-V Platform
+>   * Hyper-V GUI Management Tools
+>   * Hyper-V Module for Windows Powershell
 > * Hyper-V Platform
 >   * Hyper-V Hypervisor
 >   * Hyper-V Services
 
+Knowing this structure will help with understanding the next sections. 
+
 ## Hyper-V management from CMD.EXE
 
-### Enable Hyper-V from CMD.EXE
+### Enable Hyper-V
 
 To enable Hyper-V from Command Prompt, first start Command Prompt as 
 Administrator. Remember to save any work as this will require a system reboot. 
@@ -54,7 +56,7 @@ $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 ```
 When prompted, restart the machine. Hyper-V will now be enabled on the machine.
 
-### Disable Hyper-V from CMD.EXE
+### Disable Hyper-V
 
 Before disabling Hyper-V, save any work on the machine since a system reboot 
 will be required. Open Command Prompt as Administrator and enter the following 
@@ -65,8 +67,8 @@ $ DISM /Online /Disable-Feature:Microsoft-Hyper-V
 ```
  
  When prompted, restart the machine for the command to affect. This is for 
- disabling Hyper-V services only. All Hyper-V files will still be on the 
- machine.
+ disabling the Hyper-V Platform and its sub-features only. All Hyper-V files 
+ will still be on the machine.
  
 ## Hyper-V management from Powershell
 
@@ -97,9 +99,16 @@ the following command:
 $ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
 ``` 
 
-Restart the machine when asked to in order for the changes to be made.
+Restart the machine when asked to in order for the changes to be made. This will 
+disable the Hyper-V Platform and its sub-features.
 
 ### More Hyper-V Commands
+
+To disable just the `Hyper-V Hypervisor`, use the following command:
+
+```bash
+$ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor 
+``` 
 
 A more extensive list of Hyper-V commands on Powershell can be be found at: 
 <https://docs.microsoft.com/en-us/powershell/module/hyper-v/?view=win10-ps>.
