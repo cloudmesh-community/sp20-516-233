@@ -39,15 +39,12 @@ Administrator. On the command line, enter the following command:
 $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 ```
 
-```bash
-bcdedit /set hypervisorlaunchtype auto
-```
 ### Disable Hyper-V from CMD.EXE
 
 Open Command Prompt as Administrator and enter the following command:
 
 ```bash
-$ bcdedit /set hypervisorlaunchtype off
+$ DISM /Online /Disable-Feature:Microsoft-Hyper-V
 ```
  
 ## Hyper-V management from Powershell
