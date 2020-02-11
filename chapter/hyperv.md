@@ -22,24 +22,26 @@ $ systeminfo
 Scroll through the output until the section `Hyper-V Requirements:` is found. If 
 all requirements have `Yes` next to them, then Hyper-V can be used once it is 
 enabled [@hyper-v-requirements]. If the `Data Execution Prevention Available:` 
-requirement says `No`, the system BIOS will need to be adjusted. Make sure that 
+requirement says `No`, the system BIOS has to be adjusted. Make sure that 
 `Hardware Enforced Data Execution Prevention` and `Virtualization Technology` 
 are enabled in the system BIOS. It is possible that `Virtualization Technology` 
 is listed under a different name depending on the manufacturer 
 [@hyper-v-requirements]. 
 
-## Features
+## Windows Features
 
-Hyper-V has two main features, `Hyper-V Management Tools` and 
-`Hyper-V Platform`. Within these two features are two more features. The 
-following list shows how the features are structured:
+In Windows, Hyper-V can be accessed under Windows Features. Hyper-V is listed 
+with two main features, `Hyper-V Management Tools` and `Hyper-V Platform`. 
+Within these two features are two more sub-features. The following list shows 
+how the features are structured:
 
-> * Hyper-V Management Tools
->   * Hyper-V GUI Management Tools
->   * Hyper-V Module for Windows Powershell
-> * Hyper-V Platform
->   * Hyper-V Hypervisor
->   * Hyper-V Services
+> * Hyper-V
+>   * Hyper-V Management Tools
+>     * Hyper-V GUI Management Tools
+>     * Hyper-V Module for Windows Powershell
+>   * Hyper-V Platform
+>     * Hyper-V Hypervisor
+>     * Hyper-V Services
 
 Knowing this structure will help with understanding the next sections. 
 
@@ -49,7 +51,7 @@ Knowing this structure will help with understanding the next sections.
 
 To enable Hyper-V from Command Prompt, first start Command Prompt as 
 Administrator. Remember to save any work as this will require a system reboot. 
-On the command line, enter the following command:
+On the command line, enter the following command [@hyper-v-install]:
 
 ```bash
 $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
@@ -66,24 +68,23 @@ command:
 $ DISM /Online /Disable-Feature:Microsoft-Hyper-V
 ```
  
- When prompted, restart the machine for the command to affect. This is for 
- disabling the Hyper-V Platform and its sub-features only. All Hyper-V files 
- will still be on the machine.
+ When prompted, restart the machine to update the changes. This is for disabling 
+ the Hyper-V Platform and its sub-features only.
  
 ## Hyper-V management from Powershell
 
 ### Enable Hyper-V
 
 First start Powershell as Administrator. There are two ways to enable Hyper-V 
-from Powershell. Only choose one of the the following commands. 
-
-Run the following command:
+from Powershell. These commands will require a system reboot so save any work on 
+the machine before continuing. Only choose one of the the following commands 
+suggested from [@hyper-v-install]. 
  
 ```bash
 $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 
-**OR** run this following command:
+**OR**
 
 ```bash
 $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
@@ -93,18 +94,24 @@ $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 
 Make sure to save any work on the machine since this will require a system 
 reboot. To disable Hyper-V, start Powershell as Administrator, and then enter 
-the following command:
+one of the following commands.
 
 ```bash
 $ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
 ``` 
+
+**OR**
+
+```bash
+$ DISM /Online /Disable-Feature:Microsoft-Hyper-V
+```
 
 Restart the machine when asked to in order for the changes to be made. This will 
 disable the Hyper-V Platform and its sub-features.
 
 ### More Hyper-V Commands
 
-To disable just the `Hyper-V Hypervisor`, use the following command:
+To disable just the `Hyper-V Hypervisor`, use the following command :
 
 ```bash
 $ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor 
@@ -124,17 +131,20 @@ install Multipass.
 
 ### Windows 10 Home
 
-Hyper-V is not supported for Windows 10 Home. In order to install Multipass, 
-either Virtualbox needs to be installed or the operating system needs to be 
-upgraded to Windows 10 Pro or EDU. The following two subsections show how to 
-prepare the installation for Virtualbox on Windows Home or how to upgrade to 
-Windows 10 Pro or EDU. 
+Hyper-V is not supported for Windows 10 Home [@hyper-v-intro]. In order to 
+install Multipass, either Virtualbox needs to be installed or the operating 
+system needs to be upgraded to Windows 10 Pro or EDU. The following two 
+subsections show how to prepare the installation for Virtualbox on Windows Home 
+or how to upgrade to Windows 10 Pro or EDU. 
 
 #### Disable Hyper-V Before Virtualbox Installation
 
-Before installing Virtualbox, make sure that Hyper-V has been disabled. The 
-previous section includes commands to disable Hyper-V. Once Hyper-V is disabled, 
-Virtualbox can be installed at <https://www.virtualbox.org/wiki/Downloads>.
+Since Windows 10 Home does not support Hyper-V, Virtualbox can be installed 
+immediately at <https://www.virtualbox.org/wiki/Downloads>. However, if the 
+operating system is Windows 10 Pro or Windows 10 EDU and Virtualbox is preferred 
+instead of Hyper-V, make sure that Hyper-V has been disabled. The previous 
+sections include commands to disable Hyper-V. 
+
 
 #### Upgrade Windows 10 Home to Windows 10 Pro or EDU
 
@@ -146,4 +156,8 @@ for Windows 10 Pro 64-bit can be obtained at
 Windows 10 EDU 64-bit is provided free of charge for 
 Indiana University students at <https://iuware.iu.edu/Windows/Title/2977>.
 
-Once the product key is obtained, navigate to the 
+Once the product key is obtained, navigate to `Settings >  Update & Security > 
+Activation > change product key` [@hyper-v-intro]. Enter the new product key and 
+press `Next`. This will update Windows to the new edition. After Windows 10 Pro 
+or Windows 10 EDU is installed, enable Hyper-V as shown in the previous 
+sections.
