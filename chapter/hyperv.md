@@ -28,6 +28,19 @@ are enabled in the system BIOS. It is possible that `Virtualization Technology`
 is listed under a different name depending on the manufacturer 
 [@hyper-v-requirements]. 
 
+## Features
+
+Hyper-V has two main features, `Hyper-V Management Tools` and 
+`Hyper-V Platform`. Withing these two features are two more features. The 
+following list shows how the features are structured:
+
+> * Hyper-V Management Tools
+>   * Hyper-V Platform
+>   * Hyper-V Platform
+> * Hyper-V Platform
+>   * Hyper-V Hypervisor
+>   * Hyper-V Services
+
 ## Hyper-V management from CMD.EXE
 
 ### Enable Hyper-V from CMD.EXE
@@ -76,12 +89,15 @@ $ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 
 ### Disable Hyper-V
 
-To disable Hyper-V, start Powershell as Administrator and then enter the 
-following command:
+Make sure to save any work on the machine since this will require a system 
+reboot. To disable Hyper-V, start Powershell as Administrator, and then enter 
+the following command:
 
 ```bash
-$ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor 
+$ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
 ``` 
+
+Restart the machine when asked to in order for the changes to be made.
 
 ### More Hyper-V Commands
 
