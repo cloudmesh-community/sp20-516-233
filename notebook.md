@@ -23,8 +23,6 @@
 
 ## Week 3 January 27 - February 1, 2020
 * [x] Data Center Exercises
-* [x] 
-* [x] 
 * [x] cloudmesh Installed
 
 ## Week 4 February 3-7, 2020
@@ -32,4 +30,17 @@
 * [x] worked on Hyper-V chapters
 * [x] updating cloudmesh lead to an error, reinstalling
 * [x] working on cloudmesh exercises
+
+## Week 5 February 10-14, 2020
+* [x] setup chameleon cloud VM 
+* [x] choose project: Environmental Robot Boat
+* [x] attend meeting to learn more about project details
+* [x] read about MQTT
+* [x] change chapter selection to MQTT
+
+## Week 6 February 17-21, 2020
+* [x] finish project proposal 
+* [x] work on MQTT code
+* [x] change to cmsd with Docker
+* [x] 
 * [x] 
