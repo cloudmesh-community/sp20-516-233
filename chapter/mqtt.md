@@ -45,7 +45,4 @@ $ python setup.py install
 The Mosquitto Python client is depreciated and is now part of the Eclipse Paho 
 project [@eclipse-mosquitto]. The previous section shows how to use the Paho 
 Python client.
-
-## AMQP Python Client
-
-This is not supported for Python 3.8 [@amqp].  
+  
