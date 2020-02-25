@@ -2,9 +2,10 @@
 
 ## Abstract
 
-We introduce a network architecture using MQTT services to 
+We introduce a network architecture using MQTT services to send sensor data from 
+an environmental robot boat to various cloud AI services. 
 
-## Evaluate Messaging Protocols
+## Evaluating Messaging Protocols
 
 ## Evaluating Messaging Toolkits
 
@@ -15,3 +16,4 @@ We introduce a network architecture using MQTT services to
 ### RabbitMQ
 
 ### STOMP
+
