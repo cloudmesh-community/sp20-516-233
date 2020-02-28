@@ -41,6 +41,11 @@
 ## Week 6 February 17-21, 2020
 * [x] finish project proposal 
 * [x] work on MQTT code
-* [x] change to cmsd with Docker
-* [x] 
-* [x] 
+* [x] install mongo db
+* [x] got cms downloaded correctly on Windows 10 EDU
+
+## Week 7 February 24-28, 2020
+* [x] finish project proposal 
+* [x] work on MQTT code
+* [x] finish multipass assignment
+* [x] work on MQTT code and chapter

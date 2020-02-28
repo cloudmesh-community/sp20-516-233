@@ -9,12 +9,12 @@ an environmental robot boat to various cloud AI services.
 
 ### MQTT
 
+### STOMP
+
 ### AMQP
 
 This will most likely not be used in the project since the Python library for 
 AMQP does not support Python 3.8 [@amqp]. 
-
-### STOMP
 
 ## Evaluating Messaging Toolkits
 
@@ -22,6 +22,10 @@ AMQP does not support Python 3.8 [@amqp].
 
 #### Paho Python Client
 
+### STOMP Toolkits
 
+### Polygot Toolkits
+
+#### RabbitMQ
 
 
