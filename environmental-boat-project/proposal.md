@@ -14,7 +14,8 @@ an environmental robot boat to various cloud AI services.
 ### AMQP
 
 This will most likely not be used in the project since the Python library for 
-AMQP does not support Python 3.8 [@amqp]. 
+AMQP does not support Python 3.8 [@amqp]. Furthermore, it is mostly used in 
+industrial settings.  
 
 ## Evaluating Messaging Toolkits
 
@@ -22,10 +23,18 @@ AMQP does not support Python 3.8 [@amqp].
 
 #### Paho Python Client
 
+Will most likely use this since MQTT uses low energy.
+
+#### Mosquitto Python Client
+
+
+
 ### STOMP Toolkits
+
 
 ### Polygot Toolkits
 
 #### RabbitMQ
+
 
 
