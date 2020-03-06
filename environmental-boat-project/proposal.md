@@ -56,14 +56,31 @@ while other messaging protocols must be downloaded as plugins from the website
 
 ## Network Architecture
 
-
-
-### MQTT Client
-
 >* Server: mqtt.eclipse.org
 >* Port: (default) 1883
 >* Subscribe to messages: OpenAgBloom/#
 >* The two messages are: OpenAgBloom/Air/BME, OpenAgBloom/GPS/Loc
+
+### Client
+
+The first line of code creates a MQTT client. The second line connects the 
+client to the server named `mqtt.eclipse.org` on port 1883. 
+
+```
+client = mqtt.Client()
+
+client.connect("mqtt.eclipse.org", 1883, 60)
+```
+
+#### Subscriber
+
+Here we have assign the subscriber message as `OpenAgBloom/#`.
+
+```
+client.subscribe("OpenAgBloom/#")
+```
+
+#### Publisher
 
 ```
 
