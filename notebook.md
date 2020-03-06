@@ -40,12 +40,14 @@
 
 ## Week 6 February 17-21, 2020
 * [x] finish project proposal 
-* [x] work on MQTT code
+* [x] work on MQTT research
 * [x] install mongo db
 * [x] got cms downloaded correctly on Windows 10 EDU
 
 ## Week 7 February 24-28, 2020
-* [x] finish project proposal 
 * [x] work on MQTT code
-* [x] finish multipass assignment
-* [x] work on MQTT code and chapter
+* [x] work on MQTT chapter
+
+## Week 8 
+* [x] work on MQTT code
+* [x] update documentation
