@@ -40,6 +40,11 @@ $ cd paho.mqtt.python
 $ python setup.py install
 ```
 
+#### Starting Code Template
+
+```
+
+```
 ## Mosquitto Python Client
 
 The Mosquitto Python client is depreciated and is now part of the Eclipse Paho 

@@ -63,13 +63,35 @@ while other messaging protocols must be downloaded as plugins from the website
 
 ### Client
 
-The first line of code creates a MQTT client. The second line connects the 
-client to the server named `mqtt.eclipse.org` on port 1883. 
+The first line of code creates a MQTT client. The commented line connects the 
+client to the public server named `mqtt.eclipse.org` on port 1883. 
 
 ```
 client = mqtt.Client()
 
-client.connect("mqtt.eclipse.org", 1883, 60)
+ client.connect("mqtt.eclipse.org", 1883, 60)
+```
+
+This creates a MQTT client that runs on a local server on port 1883. 
+
+```
+client = mqtt.Client("mqttClient")
+client.on_connect = on_connect
+client.connect(host="localhost",port=1883, clean_session=False)
+```
+
+#### How to Find the Local Host IP Address
+
+On Linux and MacOS use the following command in terminal:
+
+```bash
+ifconfig
+``` 
+
+On Windows, use the following command on Command Prompt:
+
+```bash
+ipconfig
 ```
 
 #### Subscriber
@@ -84,4 +106,16 @@ client.subscribe("OpenAgBloom/#")
 
 ```
 
+```
+
+#### Logging
+
+To create a log, define a Python function called `on_log` that contains all the 
+necessary logging information. Then set `client.on_log = on_log` to start 
+logging the information. 
+
+```
+def on_log():
+    print("logging_message")
+client.on_log = on_log
 ```

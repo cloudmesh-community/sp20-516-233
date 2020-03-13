@@ -14,18 +14,36 @@ def on_connect(client, userdata, flags, rc):
 
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    #client.subscribe("$SYS/#")
-    client.subscribe("OpenAgBloom/#")
+    client.subscribe("$SYS/#")
+    # subscribe to qos=1
+    #client.subscribe("OpenAgBloom/#, 1")
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
+    m1 = "OpenAgBloom/Air/BME"
+    m2 = "OpenAgBloom/GPS/Loc"
 
-client = mqtt.Client()
+    if msg == m1:
+        print(m1)
+    if msg == m2:
+        print(m2)
+
+def on_log():
+    # get time
+    print("");
+
+# MQTT broker on local host
+#broker = "192.168.1.254"
+client = mqtt.Client("mqttClient", clean_session=False, protocol=mqtt.MQTTv31)
 client.on_connect = on_connect
 client.on_message = on_message
+client.on_log = on_log
 
-client.connect("mqtt.eclipse.org", 1883, 60)
+client.connect(host="192.168.1.254", port=1883)
+
+# right now it is being running publicly
+#client.connect("mqtt.eclipse.org", 1883, 60)
 
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
