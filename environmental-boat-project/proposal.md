@@ -69,15 +69,22 @@ client to the public server named `mqtt.eclipse.org` on port 1883.
 ```
 client = mqtt.Client()
 
- client.connect("mqtt.eclipse.org", 1883, 60)
+client.connect("mqtt.eclipse.org", 1883, 60)
 ```
 
-This creates a MQTT client that runs on a local server on port 1883. 
+This creates a MQTT client that runs on a local server on port 1883. The 
+`client_id` specifies a name for the client. If `client_id` is left empty, then 
+it will be automatically assigned a random name. We set `clean_session=False` 
+because we want the broker to keep information about the subscriptions and 
+queued messages whenever the client disconnects. We need to specify the MQQT 
+`protocol` version since the automatic default can change with updates.  
 
 ```
-client = mqtt.Client("mqttClient")
-client.on_connect = on_connect
-client.connect(host="localhost",port=1883, clean_session=False)
+client = mqtt.Client("mqttClient", clean_session=False, protocol=mqtt.MQTTv31)
+
+---------- other code for client setup in between -------------
+
+client.connect(host="insert_localhost_ip_address", port=1883)
 ```
 
 #### How to Find the Local Host IP Address
@@ -96,10 +103,14 @@ ipconfig
 
 #### Subscriber
 
-Here we have assign the subscriber message as `OpenAgBloom/#`.
+Here we have assign the subscriber message as `OpenAgBloom/#` with a quality of 
+service `qos` of 1. We choose `qos=1` because we want to be sure that the 
+messages are sent to the broker. However, it is possible that there are 
+duplicate messages so additional code will be needed to prevent this. Another 
+possibility is using `qos=2` which ensures that   
 
 ```
-client.subscribe("OpenAgBloom/#")
+client.subscribe("subscriber_message", 1)
 ```
 
 #### Publisher
@@ -116,6 +127,6 @@ logging the information.
 
 ```
 def on_log():
-    print("logging_message")
+    # include logging code
 client.on_log = on_log
 ```

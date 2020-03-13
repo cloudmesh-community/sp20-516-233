@@ -14,9 +14,9 @@ def on_connect(client, userdata, flags, rc):
 
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    client.subscribe("$SYS/#")
+    #client.subscribe("$SYS/#")
     # subscribe to qos=1
-    #client.subscribe("OpenAgBloom/#, 1")
+    client.subscribe("OpenAgBloom/#, 1")
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -29,9 +29,9 @@ def on_message(client, userdata, msg):
     if msg == m2:
         print(m2)
 
-def on_log():
+def on_log(date, hour, message):
     # get time
-    print("");
+    print(message +"_"+ date +"_"+ hour);
 
 # MQTT broker on local host
 #broker = "192.168.1.254"
