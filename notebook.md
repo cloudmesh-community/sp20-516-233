@@ -51,3 +51,9 @@
 ## Week 8 
 * [x] work on MQTT code
 * [x] update documentation
+
+## Week 9 
+* [x] work on MQTT code
+* [x] update documentation
+* having trouble connecting on local host - Windows denying connection. I think 
+I might try to move to chameleon cloud with UNIX to run my code 
