@@ -6,12 +6,18 @@ broker_ip = "192.168.1.254"
 # 1883 is a default port that is unencrypted
 broker_port = 1883
 
+
 def imitation_gps():
-    gps_data = ""
+    """this creates imitation gps outputs"""
+
+    gps_data = {'name': 'some_name', 'data': {'time':timestamp}, 'lat': LatDec,
+              'lon':LonDec}
     return gps_data
 
 if __name__ == '__main__':
     client = mqtt.Client()
     client.connect(broker_ip, broker_port)
+    # the payload would ideally have a gps object that returns values
+    # however, for testing purposes, an imitation_gps is used instead
     client.publish(topic="OpenAgBloom/GPS/Loc", payload=imitation_gps(), qos=1,
                    retain=False)
