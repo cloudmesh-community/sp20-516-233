@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 
 # get the localhost IP by using "hostname -I" in terminal
-broker_ip = "192.168.1.254"
+broker_ip = "10.128.0.3"
 
 # 1883 is a default port that is unencrypted
 broker_port = 1883

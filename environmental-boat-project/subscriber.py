@@ -3,7 +3,7 @@ import csv
 import os.path
 
 # get the localhost IP by using "hostname -I" in terminal
-broker_ip = "192.168.1.254"
+broker_ip = "10.128.0.3"
 
 # 1883 is a default port that is unencrypted
 broker_port = 1883
@@ -13,8 +13,6 @@ dir_location = "/home/sp20-516-233/environmental-boat-project/"
 bme_filename = "bme.csv"
 gps_filename = "gps.csv"
 sonar_filename = "sonar.csv"
-
-
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
@@ -52,22 +50,31 @@ def on_message_from_bme(client, userdata, msg):
         file.write(bme_info)
 
 def on_message_from_sonar(client, userdata, msg):
-    print(msg.topic+"_"+msg.payload.decode())
-    # get the temp, humidity, and barometer info
-    sonar_info = msg.payload.decode()
+    print(msg.topic+"_"+msg.payload)
+    # get the temperature and depth
+    sonar_info = msg.payload
 
     # check if the file exists
     file_exists = os.path.isfile(dir_location + sonar_filename)
+    print(file_exists)
 
     # write the data into a file
-    with open(sonar_filename, "a") as file:
-        headers = ["Depth"]
-        writer = csv.DictWriter(file, delimiter=',', fieldnames=headers)
+    with open(sonar_filename, "r+") as file:
+        headers = ["Id", "Depth", "Temperature_C"]
 
+        # give an Id number for the data entry
+        id_num = str(len(file.read().split("/n"))+1)
+
+        writer = csv.DictWriter(file, delimiter=',', fieldnames=headers)
         if not file_exists:
+            print("writing header")
             # write the header if the file did not exist earlier
             writer.writeheader()
-        file.write(sonar_info)
+        
+        print("writing data")
+        # extract the water depth and temperature
+        sonar_info = sonar_info.split("_")
+        file.writerow({"Id":id_num, "Depth":sonar_info[0], "Temperature_C":sonar_info[1]})
 
 def on_log(date, hour, message):
     # get time

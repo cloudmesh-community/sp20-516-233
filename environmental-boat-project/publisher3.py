@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 import random
 
 # get the localhost IP by using "hostname -I" in terminal
-broker_ip = "192.168.1.254"
+broker_ip = "10.128.0.3"
 
 # 1883 is a default port that is unencrypted
 broker_port = 1883
@@ -11,13 +11,8 @@ broker_port = 1883
 
 def imitation_sonar():
     """imitates a sonar object that sends either depth or temperature data"""
-    topic_names = ["SDDBT", "YXMTW"]
-    name = random.randint(0,1)
+    return  str(sonar_depth()) + "_"+ str(sonar_temp())
 
-    if name == "SDDBT":
-        sonar_depth()
-    else:
-        sonar_temp()
 
 def sonar_depth():
     """this creates imitation sonar depth outputs"""
@@ -25,7 +20,8 @@ def sonar_depth():
     sigma = 25
     mu = 3
     depth_in_feet = random.randrange(12,31)*sigma+mu
-    return {'name': "SDDBT", 'data': {'depth': depth_in_feet}}
+    return depth_in_feet
+#{'name': "SDDBT", 'data': {'depth': depth_in_feet}}
 
 def sonar_temp():
     """this creates imitation sonar temperature outputs"""
@@ -33,15 +29,19 @@ def sonar_temp():
     sigma = 55
     mu = 3
     temperature_in_C = random.randrange(32, 75) * sigma + mu
-    return {'name': "YXMTW", 'data': {'temp': temperature_in_C}}
+    return temperature_in_C
+#{'name': "YXMTW", 'data': {'temp': temperature_in_C}}
+
 
 def main():
     client = mqtt.Client()
     client.connect(broker_ip, broker_port)
+
     # the payload would ideally have a gps object that returns values
     # however, for testing purposes, an imitation_gps is used instead
-    client.publish(topic="Boat/Sonar", payload=sonar_depth(), qos=1,
-                   retain=False)
+    while True:
+        sonar_data = imitation_sonar()
+        client.publish(topic="Boat/Sonar", payload=sonar_data, qos=1,retain=False)
 
 if __name__ == '__main__':
     main()
