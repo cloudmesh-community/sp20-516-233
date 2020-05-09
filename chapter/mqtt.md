@@ -1,6 +1,6 @@
 # MQTT sp20-516-233 Holly Zhang
 
-## Paho Python Client
+## Eclipse Paho-MQTT Python Client
 
 ### Supported Features
 
@@ -28,6 +28,7 @@ by [@eclipse-paho]. Choose only one of them.
 #### Python Pip Download
 Make sure that pip had been downloaded and updated before entering the following 
 command:
+
 ```bash
 $ pip install paho-mqtt
 ```
@@ -40,11 +41,13 @@ $ cd paho.mqtt.python
 $ python setup.py install
 ```
 
-#### Connecting a Client to a Public Server
+### Connecting a Client to a Public Server
 
 This creates a client that connects to the `mqtt.eclipse.org` public server on 
 `port 1883`. The parameter `keepalive=60` sets the maximum amount of seconds 
-allowed for the broker and client to communicate with each other. 
+allowed for the broker and client to communicate with each other. Other public 
+servers can be used by replacing `mqtt.eclipse.org` with the desired server's 
+url or its IP address.
 
 ```
 client = mqtt.Client()
@@ -54,14 +57,31 @@ client = mqtt.Client()
 client.connect("mqtt.eclipse.org", 1883, 60)
 ```
 
-#### Connecting a Client to a Localhost
+### Connecting a Client to a Localhost
+
+MQTT services can be run on a localhost instead of a public server. In order to 
+run it locally, an MQTT broker needs to be installed on the localhost. The 
+following command shows how to install the Mosquitto Broker:
+
+```bash
+$ sudo apt-get install mosquitto
+```
+
+After installing the broker, the localhost IP needs to be found. This can be 
+done using the following command:
+
+```bash
+$ hostname -I
+```
+
+Once the localhost IP is found, use it in the place of `localhost_ip`.
 
 ```
 client = mqtt.Client("mqttClient", clean_session=False, protocol=mqtt.MQTTv31)
 
 ---------- client setup code in between -------------
 
-client.connect(host="insert_localhost_ip_address", port=1883)
+client.connect(host="localhost_ip", port=1883)
 ```
 
 #### Subscribing
@@ -87,7 +107,7 @@ def on_log():
 client.on_log = on_log
 ```
 
-## Mosquitto Python Client
+## Mosquitto Python
 
 The Mosquitto Python client is depreciated and is now part of the Eclipse Paho 
 project [@eclipse-mosquitto]. The previous section shows how to use the Paho 
