@@ -56,8 +56,17 @@ def on_message_from_sonar(client, userdata, msg):
     # get the temp, humidity, and barometer info
     sonar_info = msg.payload.decode()
 
+    # check if the file exists
+    file_exists = os.path.isfile(dir_location + sonar_filename)
+
     # write the data into a file
-    with open(bme_filename, "a") as file:
+    with open(sonar_filename, "a") as file:
+        headers = ["Depth"]
+        writer = csv.DictWriter(file, delimiter=',', fieldnames=headers)
+
+        if not file_exists:
+            # write the header if the file did not exist earlier
+            writer.writeheader()
         file.write(sonar_info)
 
 def on_log(date, hour, message):
@@ -77,9 +86,6 @@ if __name__ == '__main__':
     # have callbacks on msg topics
     client.subscribe("OpenAgBloom/Air/BME", qos=1)
     client.subscribe("OpenAgBloom/GPS/Loc", qos=1)
-    client.subscribe("Boat/Sonar/Depth", qos=1)
-    client.subscribe("Boat/Sonar/Temp", qos=1)
-    client.message_callback_add("Boat/Sonar/Depth", on_message_from_sonar)
     client.message_callback_add("OpenAgBloom/Air/BME", on_message_from_bme)
     client.message_callback_add("OpenAgBloom/GPS/Loc", on_message_from_gps)
 
