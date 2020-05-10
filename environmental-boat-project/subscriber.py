@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt
 import csv
-import os.path
 
 # get the localhost IP by using "hostname -I" in terminal
 broker_ip = "10.128.0.3"
@@ -19,15 +18,15 @@ def on_connect(client, userdata, flags, rc):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     # subscribe to qos=1
-    client.subscribe("OpenAgBloom/#", qos=1)
+    #client.subscribe("OpenAgBloom/#", qos=1)
     client.subscribe("Boat/#", qos=1)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
+    print(msg.topic+" "+str(msg.payload.decode()))
 
 def on_message_from_gps(client, userdata, msg):
-    print(msg.topic+"_"+str(msg.payload.decode()))
+    print(msg.topic+" "+str(msg.payload.decode()))
 
     # write gps data in file
     gps_info = msg.payload.decode()
@@ -41,7 +40,7 @@ def on_message_from_gps(client, userdata, msg):
         file.write(gps_info)
 
 def on_message_from_bme(client, userdata, msg):
-    print(msg.topic+"_"+msg.payload.decode())
+    print(msg.topic+" "+msg.payload.decode())
     # get the temp, humidity, and barometer info
     bme_info = msg.payload.decode()
 
@@ -50,31 +49,34 @@ def on_message_from_bme(client, userdata, msg):
         file.write(bme_info)
 
 def on_message_from_sonar(client, userdata, msg):
-    print(msg.topic+"_"+msg.payload)
-    # get the temperature and depth
-    sonar_info = msg.payload
+    print(msg.topic+" "+msg.payload.decode())
+    # extract the water depth and temperature
+    sonar_info = msg.payload.decode()
+    sonar_info = sonar_info.split("_")
+    
+    headers = ["Id", "Depth", "Temperature_C"]
+    try:
+        id_num = 1
+        with open(sonar_filename, "r") as r_file:
+            # give an Id number for the data entry
+            reader = csv.DictReader(r_file)
+            for row in reader:
+                id_num = id_num + 1
 
-    # check if the file exists
-    file_exists = os.path.isfile(dir_location + sonar_filename)
-    print(file_exists)
-
-    # write the data into a file
-    with open(sonar_filename, "r+") as file:
-        headers = ["Id", "Depth", "Temperature_C"]
-
-        # give an Id number for the data entry
-        id_num = str(len(file.read().split("/n"))+1)
-
-        writer = csv.DictWriter(file, delimiter=',', fieldnames=headers)
-        if not file_exists:
-            print("writing header")
+        with open(sonar_filename, "a") as a_file:
+            # write the data into the csv file
+            writer = csv.DictWriter(a_file, fieldnames=headers)
+            writer.writerow({"Id":id_num, "Depth":sonar_info[0], "Temperature_C":sonar_info[1]})
+    except FileNotFoundError as er:
+        # create a csv file if it does not exist
+        with open(sonar_filename, "w") as w_file:
             # write the header if the file did not exist earlier
+            writer = csv.DictWriter(w_file, fieldnames=headers)
             writer.writeheader()
-        
-        print("writing data")
-        # extract the water depth and temperature
-        sonar_info = sonar_info.split("_")
-        file.writerow({"Id":id_num, "Depth":sonar_info[0], "Temperature_C":sonar_info[1]})
+            # write the data into the csv file
+            writer.writerow({"Id":1, "Depth":sonar_info[0], "Temperature_C":sonar_info[1]})
+    finally:
+        print("finally clause reached")
 
 def on_log(date, hour, message):
     # get time
@@ -91,11 +93,11 @@ if __name__ == '__main__':
     client.connect(broker_ip, broker_port)
 
     # have callbacks on msg topics
-    client.subscribe("OpenAgBloom/Air/BME", qos=1)
-    client.subscribe("OpenAgBloom/GPS/Loc", qos=1)
-    client.message_callback_add("OpenAgBloom/Air/BME", on_message_from_bme)
-    client.message_callback_add("OpenAgBloom/GPS/Loc", on_message_from_gps)
-
+    #client.subscribe("OpenAgBloom/Air/BME", qos=1)
+    #client.subscribe("OpenAgBloom/GPS/Loc", qos=1)
+    #client.message_callback_add("OpenAgBloom/Air/BME", on_message_from_bme)
+    #client.message_callback_add("OpenAgBloom/GPS/Loc", on_message_from_gps)
+    client.message_callback_add("Boat/Sonar", on_message_from_sonar)
     client.loop_forever()
 
     # need to figure out if the thing disconnected previously and see if there

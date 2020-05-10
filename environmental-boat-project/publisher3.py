@@ -11,24 +11,24 @@ broker_port = 1883
 
 def imitation_sonar():
     """imitates a sonar object that sends either depth or temperature data"""
-    return  str(sonar_depth()) + "_"+ str(sonar_temp())
+    return  str(sonar_depth()) + "_" + str(sonar_temp())
 
 
 def sonar_depth():
     """this creates imitation sonar depth outputs"""
     # choose a random depth
-    sigma = 25
-    mu = 3
-    depth_in_feet = random.randrange(12,31)*sigma+mu
+    st_dev = 10
+    mean = 20
+    depth_in_feet = random.gauss(mean, st_dev)
     return depth_in_feet
 #{'name': "SDDBT", 'data': {'depth': depth_in_feet}}
 
 def sonar_temp():
     """this creates imitation sonar temperature outputs"""
     # choose a random temperature
-    sigma = 55
-    mu = 3
-    temperature_in_C = random.randrange(32, 75) * sigma + mu
+    st_dev = 15
+    mean = 50
+    temperature_in_C = random.gauss(mean, st_dev)
     return temperature_in_C
 #{'name': "YXMTW", 'data': {'temp': temperature_in_C}}
 
