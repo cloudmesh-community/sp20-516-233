@@ -37,8 +37,16 @@ the files will be written in the correct location.
 ## How to Run the Script
 
 First, open two terminal windows. Run `subscriber.py` first in one terminal 
-window and then run `publisher.py` in another window.
+window:
 
+```bash
+$ python ./subscriber.py
+```
+
+In another terminal window, run `publisher3.py`:
+```bash
+$ python ./publisher3.py
+```
 
 
   
