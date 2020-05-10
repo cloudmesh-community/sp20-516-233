@@ -47,6 +47,3 @@ In another terminal window, run `publisher3.py`:
 ```bash
 $ python ./publisher3.py
 ```
-
-
-  
