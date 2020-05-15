@@ -38,20 +38,17 @@ devices that have low computing capacity such as simple sensors.
 
 ### MQTT Toolkits
 
-#### Paho MQTT Python
+#### Paho MQTT
 
-The Paho Python client ...[@eclipse-paho]. Although  
+The Paho MQTT Python client has an extensive documentation of the code with many 
+examples. H[@eclipse-paho]. 
 
-#### Mosquitto Python Client
+#### Mosquitto
 
 The Mosquitto Python library is now depreciated so it will not be used. Instead, 
-it has been added into the Eclipse Paho project [@eclipse-mosquitto].
-
-### STOMP Toolkits
-
-#### Apache ActiveMQ
-
-Apache's ActiveMQ supports 
+it has been added into the Eclipse Paho project [@eclipse-mosquitto]. However, 
+the Mosquitto Broker is available for use and can support websockets. Though, 
+the websocket has to be downloaded independently and then enabled in the broker.
 
 ### Other Toolkits
 
