@@ -1,3 +1,6 @@
+import paho.mqtt.client as mqtt
+import csv
+
 # get the localhost IP by using "hostname -I" in terminal
 broker_ip = "10.128.0.3"
 
