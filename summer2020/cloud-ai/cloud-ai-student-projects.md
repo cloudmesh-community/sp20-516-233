@@ -1,12 +1,15 @@
-# Links of Cloud AI-services
+# Links of Cloud AI Services sp20-516-233 Holly Zhang
 
 ## Cloudmesh-openapi
 
-## Proceedings
+## Spring 2020 Proceedings
+
+Section 2 of the Spring 2020 Proceedings contain information on cloud AI 
+services offered by Google, AWS, Azure, IBM, and Oracle.  
+
+## Cloud Handbook 
 
 ## Spring 2020 Student Repositories
-
-### Cloud Platforms
 
 #### Overviews
 
