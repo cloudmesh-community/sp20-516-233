@@ -9,64 +9,44 @@
 Section 2 of the Spring 2020 Proceedings contain information on cloud AI 
 services offered by Google, AWS, Azure, IBM, and Oracle.
 
-2.1.1 Cloud AI Services Overview: <https://github.com/cloudmesh-community/sp20-5
-16-239/blob/master/chapter/ai-services-overview.md>
+2.1.1 Cloud AI Services Overview: <https://github.com/cloudmesh-community/sp20-516-239/blob/master/chapter/ai-services-overview.md>
 
-2.2.1 Google AI Services: <https://github.com/cloudmesh-community/sp20-516-240/b
-lob/master/chapter/ai-google.md>
+2.2.1 Google AI Services: <https://github.com/cloudmesh-community/sp20-516-240/blob/master/chapter/ai-google.md>
 *No content in the link*
 
-2.2.2 Google AI Services - AutoML: <https://github.com/cloudmesh-community/sp20-
-516-240/blob/master/chapter/ai-google-automl.md>
+2.2.2 Google AI Services - AutoML: <https://github.com/cloudmesh-community/sp20-516-240/blob/master/chapter/ai-google-automl.md>
 
-2.2.3 AI Google Cloud Gaming Services sp20-516-247 Gupta, Akshay: <https://githu
-b.com/cloudmesh-community/sp20-516-247/blob/master/chapter/ai-google-gaming.md> 
+2.2.3 AI Google Cloud Gaming Services sp20-516-247 Gupta, Akshay: <https://github.com/cloudmesh-community/sp20-516-247/blob/master/chapter/ai-google-gaming.md> 
 *No content in the link*
 
-2.3.1 AI Services on AWS: <https://github.com/cloudmesh-community/sp20-516-223/b
-lob/master/chapter/ai-aws-overview.md> *No content in the link*
+2.3.1 AI Services on AWS: <https://github.com/cloudmesh-community/sp20-516-223/blob/master/chapter/ai-aws-overview.md> 
+*No content in the link*
 
-2.3.2 RoboMaker on AWS sp20-516-223 Rahul Dharmchand: <https://github.com/cloudm
-esh-community/sp20-516-223/blob/master/chapter/ai-aws-robomaker.md>
+2.3.2 RoboMaker on AWS sp20-516-223 Rahul Dharmchand: <https://github.com/cloudmesh-community/sp20-516-223/blob/master/chapter/ai-aws-robomaker.md>
 
-2.3.3 AWS Polly sp20-516-236, Achath, Seema: <https://github.com/cloudmesh-commu
-nity/sp20-516-236/blob/master/chapter/ai-aws-polly.md>
+2.3.3 AWS Polly sp20-516-236, Achath, Seema: <https://github.com/cloudmesh-community/sp20-516-236/blob/master/chapter/ai-aws-polly.md>
 
-2.3.4 AWS SageMaker: <https://github.com/cloudmesh-community/book/blob/master/ch
-apters/machinelearing/aws-sagemaker.md>
+2.3.4 AWS SageMaker: <https://github.com/cloudmesh-community/book/blob/master/chapters/machinelearing/aws-sagemaker.md>
 
-2.3.6 AWS Sagemaker Ground Truth sp20-516-250, Palani, Senthil: <https://github.
-com/cloudmesh-community/sp20-516-250/blob/master/chapter/aws-sagemaker-groundtru
-th.md>
+2.3.6 AWS Sagemaker Ground Truth sp20-516-250, Palani, Senthil: <https://github.com/cloudmesh-community/sp20-516-250/blob/master/chapter/aws-sagemaker-groundtruth.md>
 
-2.3.7 AI Service AWS Forecast on AWS sp20-516-255, Porwal, Prafull: <https://git
-hub.com/cloudmesh-community/sp20-516-255/blob/master/chapter/ai-aws-forecast.md>
+2.3.7 AI Service AWS Forecast on AWS sp20-516-255, Porwal, Prafull: <https://github.com/cloudmesh-community/sp20-516-255/blob/master/chapter/ai-aws-forecast.md>
 
-2.3.8 AWA Rekognition sp20-516-253, Arivukadal, Lenin: <https://github.com/cloud
-mesh-community/sp20-516-253/blob/master/chapter/ai-aws-rekognition.md>
+2.3.8 AWA Rekognition sp20-516-253, Arivukadal, Lenin: <https://github.com/cloudmesh-community/sp20-516-253/blob/master/chapter/ai-aws-rekognition.md>
 
-2.4.1 AI Services on Azure: <https://github.com/cloudmesh-community/sp20-516-243
-/blob/master/chapter/ai-azure-overview.md>
+2.4.1 AI Services on Azure: <https://github.com/cloudmesh-community/sp20-516-243/blob/master/chapter/ai-azure-overview.md>
 
-2.4.2 Cognitive Services on Azure sp20-516-243 David Drummond: <https://github.c
-om/cloudmesh-community/sp20-516-243/blob/master/chapter/ai-azure-cognitiveservic
-es.md>
+2.4.2 Cognitive Services on Azure sp20-516-243 David Drummond: <https://github.com/cloudmesh-community/sp20-516-243/blob/master/chapter/ai-azure-cognitiveservices.md>
 
-2.4.3 Chapter: Ishan Mishra sp20-516-238: <https://github.com/cloudmesh-communit
-y/sp20-516-238/blob/master/chapter/ai-azure-bot.md>
+2.4.3 Chapter: Ishan Mishra sp20-516-238: <https://github.com/cloudmesh-community/sp20-516-238/blob/master/chapter/ai-azure-bot.md>
 
-2.5.1 AI Services by IBM Ashley Thornton sp20-516-230: <https://github.com/cloud
-mesh-community/sp20-516-230/blob/master/chapter/ai-ibm-overview.md>
+2.5.1 AI Services by IBM Ashley Thornton sp20-516-230: <https://github.com/cloudmesh-community/sp20-516-230/blob/master/chapter/ai-ibm-overview.md>
 
-2.6.1 AI Services on Oracle: Prateek Shaw sp20-516-229: <https://github.com/clou
-dmesh-community/sp20-516-229/blob/master/chapter/ai-oracle-overview.md>
+2.6.1 AI Services on Oracle: Prateek Shaw sp20-516-229: <https://github.com/cloudmesh-community/sp20-516-229/blob/master/chapter/ai-oracle-overview.md>
 
-2.6.2 Oracle Cloud Built-in Machine Learning: <https://github.com/cloudmesh-comm
-unity/sp20-516-229/blob/master/chapter/ai-oracle-machine-learning.md>
+2.6.2 Oracle Cloud Built-in Machine Learning: <https://github.com/cloudmesh-community/sp20-516-229/blob/master/chapter/ai-oracle-machine-learning.md>
 
-2.6.3 Oracle Cloud Data Science Platform: Prateek Shaw sp20-516-229: <https://gi
-thub.com/cloudmesh-community/sp20-516-229/blob/master/chapter/ai-oracle-data-sci
-ence.md> 
+2.6.3 Oracle Cloud Data Science Platform: Prateek Shaw sp20-516-229: <https://github.com/cloudmesh-community/sp20-516-229/blob/master/chapter/ai-oracle-data-science.md> 
 
 ## Cloud Engineer Proceedings
 
